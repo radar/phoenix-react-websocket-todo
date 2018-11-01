@@ -11,3 +11,5 @@ mix phoenix.server
 ```
 
 At http://localhost:4000, you should see the todo list. If you open the same list in another browser, you'll notice that changes on one browser are automatically sent to the other browser.
+
+![Preview](preview.png)

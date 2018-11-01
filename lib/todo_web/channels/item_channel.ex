@@ -3,7 +3,8 @@ defmodule TodoWeb.ItemChannel do
   alias Todo.Lists
 
   def join("item:" <> item_id, _message, socket) do
-    item = item_id |> Lists.get_item! |> Map.take([:id, :name, :done])
+    item = Lists.get_item!(item_id)
+    Phoenix.View.render(TodoWeb.ItemView, "show.json", item)
     {:ok, item, socket}
   end
 

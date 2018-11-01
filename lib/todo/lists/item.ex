@@ -2,6 +2,7 @@ defmodule Todo.Lists.Item do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @derive Jason.Encoder
 
   schema "items" do
     field :name, :string

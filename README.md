@@ -1,20 +1,13 @@
-# Todo
+# Todo: Phoenix + React + Websocket Demo
 
-To start your Phoenix server:
+This is a small Phoenix application which demonstrates how to use Phoenix Channels, React and Web Sockets to build a simple todo list application.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+You can run this by first installing Elixir, and then:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+```
+mix deps.get
+mix do ecto.create, ecto.migrate
+mix phoenix.server
+```
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+At http://localhost:4000, you should see the todo list. If you open the same list in another browser, you'll notice that changes on one browser are automatically sent to the other browser.

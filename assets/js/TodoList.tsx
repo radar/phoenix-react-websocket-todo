@@ -47,7 +47,7 @@ export default class List extends React.Component {
 
   renderTodos() {
     return this.state.todos.map((todo) => {
-      return <TodoItem {...todo} toggleTodo={this.toggleTodo} key={todo.id} />
+      return <TodoItem {...todo} key={todo.id} />
     })
   }
 }

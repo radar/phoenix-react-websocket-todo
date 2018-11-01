@@ -1,9 +1,8 @@
 import * as React from "react"
 import socket from "./socket"
+import * as css from "../css/item.css"
 
 interface TodoItemProps {
-  toggleTodo: (id) => void,
-
   id: number,
   name: string,
   done: boolean,
@@ -45,15 +44,18 @@ export default class TodoItem extends React.Component<TodoItemProps, TodoItemSta
   }
 
   render() {
-    const {name} = this.props
+    const {name, id} = this.props
+    const elementID = `todo_${id}`
     return (
-      <div>
-        <input
-          type='checkbox'
-          defaultChecked={this.state.done}
-          checked={this.state.done}
-          onChange={this.toggle} />
-        {name}
+      <div className={css.todo}>
+        <label htmlFor={elementID}>
+          <input
+            id={elementID}
+            type='checkbox'
+            checked={this.state.done}
+            onChange={this.toggle} />
+          {name}
+        </label>
       </div>
     )
   }
